@@ -90,6 +90,15 @@ services:
             reservations:
               memory: 128M
 
+  attacker:
+    build: ./Attacker/
+    restart: unless-stopped
+    container_name: WiFiChallengeLab-Attacker
+    network_mode: host #NETNS
+    privileged: true #NETNS
+    stdin_open: true
+    tty: true
+
   # To keep the Dockers updated
   watchtower:
     image: containrrr/watchtower
