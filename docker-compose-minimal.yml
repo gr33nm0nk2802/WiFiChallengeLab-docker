@@ -23,3 +23,13 @@ services:
       - aps
     network_mode: host #NETNS
     privileged: true #NETNS
+
+  attacker:
+    build: ./Attacker/
+    restart: unless-stopped
+    container_name: WiFiChallengeLab-Attacker
+    network_mode: host #NETNS
+    privileged: true #NETNS
+    stdin_open: true
+    tty: true
+
