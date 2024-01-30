@@ -62,6 +62,6 @@ RUN sudo apt-get --yes autoremove ; sudo apt-get autoclean ; sudo apt-get clean
 RUN apt-get install -y ssh
 RUN echo Port 2222 >> /etc/ssh/sshd_config && systemctl enable ssh 
 
-CMD /bin/bash 
-
 #RUN cd /root/tools &&  
+
+CMD ["bash"]
